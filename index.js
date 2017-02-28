@@ -31,7 +31,7 @@ process.stdin.on('data', text => {
   if (!Object.keys(dict).length) {
     fs.readFile('/usr/share/dict/words', (err, data) => {
       if (err) return console.error(err);
-      // data.toString().split('\n').forEach(el => dict[el] = true);
+      data.toString().split('\n').forEach(el => dict[el] = true);
       process.stdout.write(`${processInput(text)}\n`);
       prompt();
     });

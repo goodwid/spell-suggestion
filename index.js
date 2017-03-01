@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const fs = require('fs');
 const tty = require('tty');
 /*
@@ -13,13 +14,16 @@ function prompt() {
   if (tty.isatty(process.stdout)) process.stdout.write('> ');
 }
 
-String.prototype.removeLetter = function (index) {
-  if (index < 0 || index > this.length) {
-    console.error('Invalid index');
-    return undefined;
-  }
-  return this.slice(0,index) + this.slice(index+1, this.length);
-};
+// String.prototype.removeLetter = function (index) {
+//   if (index < 0 || index > this.length) {
+//     console.error('Invalid index');
+//     return undefined;
+//   }
+//   return this.slice(0,index) + this.slice(index+1, this.length);
+// };
+//
+// intended for use w/ the removing duplicates portion of the work but unable to
+// determine how to get that to work with the vowel checking.
 
 String.prototype.replaceLetter = function (index, letter) {
   if (index < 0 || index > this.length) {
